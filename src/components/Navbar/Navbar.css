@@ -1,0 +1,46 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    height: 68.87px;
+    width: 100%;
+    background-color: rgb(219, 219, 219);
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menus{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 319px;
+    cursor: pointer;
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.search-box{
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    background: rgb(239, 239, 239);
+    border-radius: 6px;
+    width: 278px;
+    height: 36px;
+}
+
+.search-box input{
+    background: rgb(239, 239, 239);
+    padding: 6px;
+    border: 0;
+    outline: 0;
+    color: black;
+    font-size: 14px;
+    height: 36px;
+    width: 250px;
+}
+
+.search-box input ::placeholder{
+    color: rgb(146, 146, 146);
+}

@@ -1,9 +1,12 @@
-import "./App.css";
+import React from 'react'
+import Navbar from './components/Navbar/Navbar'
 
-function App() {
+const App = () => {
   return (
-    <div className="App"></div> // Closing div added here
-  );
+    <div className='container'>
+      <Navbar/>
+    </div>
+  )
 }
 
-export default App;
+export default App
