@@ -1,8 +1,11 @@
-import "./App.css";
+import "./App.css"; // Import your styles here
+import TabsComponent from "./Components/TabsComponent";
 
 function App() {
   return (
-    <div className="App"></div> // Closing div added here
+    <div className="App">
+      <TabsComponent />
+    </div>
   );
 }
 
