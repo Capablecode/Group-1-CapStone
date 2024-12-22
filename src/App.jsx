@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css';
@@ -26,8 +27,12 @@ const App = () => {
       console.error('Error fetching data:', error.response?.data || error.message);
     }
   };
+import "./App.css"; // Import your styles here
+import TabsComponent from "./Components/TabsComponent";
+
 
   return (
+    
     <div className="app">
       <header className="header">
       </header>
@@ -54,6 +59,8 @@ const App = () => {
           </div>
         ))}
       </div>
+    <div className="App">
+      <TabsComponent />
     </div>
   );
 };
