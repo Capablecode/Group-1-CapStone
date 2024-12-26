@@ -1,11 +1,11 @@
-import "./App.css";
-import ProfilePage from "./ProfilePage";
+import "./App.css"; // Import your styles here
+import TabsComponent from "./Components/TabsComponent";
 
 function App() {
   return (
     <div className="App">
-      <ProfilePage/>
-    </div> // Closing div added here
+      <TabsComponent />
+    </div>
   );
 }
 
