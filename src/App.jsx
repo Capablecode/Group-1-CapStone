@@ -1,8 +1,11 @@
 import "./App.css";
+import ProfilePage from "./ProfilePage";
 
 function App() {
   return (
-    <div className="App"></div> // Closing div added here
+    <div className="App">
+      <ProfilePage/>
+    </div> // Closing div added here
   );
 }
 
