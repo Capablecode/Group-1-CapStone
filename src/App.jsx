@@ -1,10 +1,15 @@
-import React from 'react';
-import Highlight from "./Components/highlight/Highlight.jsx"
+import Header from "./Components/Header";
+import Highlight from "./Components/Highlight.jsx";
+import TabsComponent from "./Components/TabsComponent.jsx";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
-    <div>
+    <div className="App">
+      <Header />
       <Highlight />
+      <TabsComponent />
+      <Footer />
     </div>
   );
 }

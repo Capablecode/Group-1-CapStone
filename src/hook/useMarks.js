@@ -1,16 +1,16 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-export function useReels() {
-  const [reels, setReels] = useState([]);
-  const [isReelsLoading, setIsReelsLoading] = useState(true);
-  const [reelsError, setReelsError] = useState(null);
+export function useMarks() {
+  const [marks, setMarks] = useState([]);
+  const [isMarksLoading, setIsMarksLoading] = useState(true);
+  const [marksError, setMarksError] = useState(null);
 
   useEffect(() => {
-    const fetchReels = async () => {
+    const fetchMarks = async () => {
       const options = {
         method: "GET",
-        url: "https://instagram-scraper-api2.p.rapidapi.com/v1.2/reels",
+        url: "https://instagram-scraper-api2.p.rapidapi.com/v1/tagged",
         params: {
           username_or_id_or_url: "mrbeast",
           url_embed_safe: true,
@@ -27,17 +27,17 @@ export function useReels() {
         console.log(response.data.data.items);
 
         console.log(response.data.data.items);
-        setReels(response.data.data.items || []);
-        setReelsError(null);
+        setMarks(response.data.data.items || []);
+        setMarksError(null);
       } catch (error) {
-        setReelsError("Failed to fetch reels");
-        setReels([]);
+        setMarksError("Failed to fetch reels");
+        setMarks([]);
         console.error(error);
       } finally {
-        setIsReelsLoading(false);
+        setIsMarksLoading(false);
       }
     };
-    fetchReels();
+    fetchMarks();
   }, []);
-  return { reels, isReelsLoading, reelsError };
+  return { marks, isMarksLoading, marksError };
 }
