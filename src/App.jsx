@@ -1,12 +1,13 @@
-import "./App.css"; // Import your styles here
 import Header from "./Components/Header";
-import TabsComponent from "./Components/TabsComponent";
+import Highlight from "./Components/Highlight.jsx";
+import TabsComponent from "./Components/TabsComponent.jsx";
 import Footer from "./Components/Footer";
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <Highlight />
       <TabsComponent />
       <Footer />
     </div>
