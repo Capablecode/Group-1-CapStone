@@ -1,15 +1,17 @@
 import React from "react";
-import "../Styles/Tabs.css";
-import { usePost } from "../hook/usePost";
-import { useReels } from "../hook/useReels";
-import publication from "../assets/post.png";
-import reel from "../assets/reels.png";
-import tag from "../assets/tag.png";
+import "../Styles/Tabs.css"; // Custom CSS for styling
+import { usePost } from "../hook/usePost"; // Custom hook for posts
+import { useReels } from "../hook/useReels"; // Custom hook for reels
+import { useMarks } from "../hook/useMarks"; // Custom hook for marks
+import publication from "../assets/post.png"; // Icon for publication tab
+import reel from "../assets/reels.png"; // Icon for reels tab
+import tag from "../assets/Tag.png"; // Icon for marks tab
 
 function App() {
-  const [activeTab, setActiveTab] = React.useState("stories");
-  const { posts, isPostsLoading, postsError } = usePost();
-  const { reels, isReelsLoading, reelsError } = useReels();
+  const [activeTab, setActiveTab] = React.useState("publication");
+  const { posts = [], isPostsLoading, postsError } = usePost();
+  const { reels = [], isReelsLoading, reelsError } = useReels();
+  const { marks = [], isMarksLoading, marksError } = useMarks();
 
   const getImageUrl = (item) => {
     if (item.image_versions?.items?.[0]?.url) {
@@ -23,11 +25,11 @@ function App() {
 
   const getIndicatorPosition = () => {
     switch (activeTab) {
-      case "stories":
+      case "publication":
         return "0%";
-      case "posts":
-        return "33.33%";
       case "reels":
+        return "33.33%";
+      case "marks":
         return "66.66%";
       default:
         return "0%";
@@ -39,24 +41,30 @@ function App() {
       <div className="tabs-container">
         <div className="tabs">
           <div
-            className={`tab ${activeTab === "stories" ? "active" : ""}`}
-            onClick={() => setActiveTab("stories")}
+            className={`tab ${activeTab === "publication" ? "active" : ""}`}
+            onClick={() => setActiveTab("publication")}
+            role="tab"
+            aria-selected={activeTab === "publication"}
           >
-            <img src={publication} alt="stories" />
+            <img src={publication} alt="publication" />
             PUBLICATION
-          </div>
-          <div
-            className={`tab ${activeTab === "posts" ? "active" : ""}`}
-            onClick={() => setActiveTab("posts")}
-          >
-            <img src={reel} alt="posts" />
-            REELS
           </div>
           <div
             className={`tab ${activeTab === "reels" ? "active" : ""}`}
             onClick={() => setActiveTab("reels")}
+            role="tab"
+            aria-selected={activeTab === "reels"}
           >
-            <img src={tag} alt="reels" />
+            <img src={reel} alt="reels" />
+            REELS
+          </div>
+          <div
+            className={`tab ${activeTab === "marks" ? "active" : ""}`}
+            onClick={() => setActiveTab("marks")}
+            role="tab"
+            aria-selected={activeTab === "marks"}
+          >
+            <img src={tag} alt="marks" />
             MARKS
           </div>
         </div>
@@ -64,7 +72,7 @@ function App() {
       </div>
 
       <div className="content">
-        {activeTab === "stories" && (
+        {activeTab === "publication" && (
           <div>
             {isPostsLoading ? (
               <p>Loading posts...</p>
@@ -82,7 +90,7 @@ function App() {
           </div>
         )}
 
-        {activeTab === "posts" && (
+        {activeTab === "reels" && (
           <div>
             {isReelsLoading ? (
               <p>Loading reels...</p>
@@ -100,10 +108,21 @@ function App() {
           </div>
         )}
 
-        {activeTab === "reels" && (
-          <div className="image-grid">
-            {/* Add logic for "reels" tab if needed */}
-            <p>No data for Marks yet.</p>
+        {activeTab === "marks" && (
+          <div>
+            {isMarksLoading ? (
+              <p>Loading tags...</p>
+            ) : marksError ? (
+              <p>Error: {marksError}</p>
+            ) : (
+              <div className="image-grid">
+                {marks.map((item) => (
+                  <div key={item.id} className="image-item">
+                    <img src={getImageUrl(item)} alt={item.code} />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>
