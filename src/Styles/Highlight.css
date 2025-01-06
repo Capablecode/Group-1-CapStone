@@ -1,0 +1,64 @@
+.app {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.circular-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.circle-container {
+  cursor: pointer;
+  text-align: center;
+}
+
+.circle {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.red {
+  background-color: #ff6b6b;
+}
+
+.blue {
+  background-color: #4c9aff;
+}
+
+.heart {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.circle-text {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.stories {
+  margin-top: 2rem;
+}
+
+.story {
+  margin: 1rem auto;
+  max-width: 400px;
+  text-align: left;
+}
+
+.story img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.story p {
+  margin-top: 0.5rem;
+}

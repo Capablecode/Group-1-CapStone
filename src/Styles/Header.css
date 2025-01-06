@@ -1,0 +1,100 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #dbdbdb;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* Desktop Styles */
+.desktop-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 976px;
+}
+
+.desktop-header h1 {
+  /* font-size: 24px; */
+  margin: 0;
+}
+.search-bar {
+  position: relative;
+}
+.search {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none;
+}
+input::placeholder {
+  color: #8e8e8e;
+  font-size: 14px;
+  padding: 10px 25px;
+}
+
+.search-bar input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #efefef;
+  width: 278px;
+  height: 36px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+  /* transition: border-color 0.3s ease; */
+}
+
+nav .icons {
+  margin: 0 10px;
+  font-size: 18px;
+}
+.profile-pics {
+  width: 24px;
+  height: 24px;
+  border-radius: 22px;
+}
+/* Hide mobile header on desktop */
+.mobile-header {
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .desktop-header {
+    display: none;
+  }
+
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .back-button,
+  .menu-button {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .flex {
+    display: flex;
+  }
+  .flex h2 {
+    margin-left: 3rem;
+    font-size: 16px;
+  }
+}
