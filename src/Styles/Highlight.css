@@ -1,13 +1,14 @@
 .app {
   font-family: Arial, sans-serif;
   text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .circular-container {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin: 1rem 0;
 }
 
 .circle-container {
@@ -16,8 +17,8 @@
 }
 
 .circle {
-  width: 80px;
-  height: 80px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
   display: flex;
   align-items: center;
