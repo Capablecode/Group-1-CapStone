@@ -45,7 +45,6 @@ const ProfilePage = () => {
 
   if (loading) return <h1>loading</h1>;
 
-  
   return (
     <div className="instagram-profile">
       <div className="profile-picture">
@@ -107,7 +106,3 @@ const ProfilePage = () => {
 };
 
 export default ProfilePage;
-
-
-
-
