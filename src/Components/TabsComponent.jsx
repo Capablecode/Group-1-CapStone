@@ -31,8 +31,7 @@ function App() {
   };
 
   useEffect(() => {
-    // const activeTabRef = tabRefs[activeTab].current;
-    const activeTabRef = tabRefs[activeTab]?.current; // Check if ref exists
+    const activeTabRef = tabRefs[activeTab].current;
     if (activeTabRef) {
       const { offsetWidth, offsetLeft } = activeTabRef;
       setLineStyle({ width: `${offsetWidth}px`, left: `${offsetLeft}px` });

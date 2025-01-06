@@ -17,8 +17,10 @@
 
 .tabs {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+
+  gap: 2.2rem;
 }
 
 .tab {
@@ -132,5 +134,10 @@ body {
   .tab img {
     width: 0.8em;
     height: 0.8em; /* Smaller icons for mobile */
+  }
+}
+.dark-mode {
+  .tab.active {
+    color: #fff;
   }
 }
