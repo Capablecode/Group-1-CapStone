@@ -1,0 +1,59 @@
+.dark-mode-toggle {
+    display: inline-flex;
+    align-items: center;
+    background-color: hsla(230, 22%, 74%, 0.712);
+    border-radius: 1.25rem;
+    padding: 5px;
+    margin-right: 2rem;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    max-width: 2.8rem;
+    height: 1.25rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dark-mode-toggle.dark-mode-enabled {
+    background: hsla(230, 22%, 74%, 0.312);
+  }
+  
+  .toggle-circle {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+  }
+  
+  .dark-mode-enabled .toggle-circle {
+    transform: translateX(calc(100% - 24px));
+  }
+  
+  .icon {
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    transition: opacity 0.3s ease;
+  }
+  
+  .icon-sun {
+    left: 4px;
+    opacity: 1;
+    transform: rotate(180deg);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .dark-mode-enabled .icon-sun {
+    opacity: 0;
+  }
+  
+  .icon-moon {
+    right: 4px;
+    opacity: 0;
+  }
+  
+  .dark-mode-enabled .icon-moon {
+    opacity: 1;
+  }
+  

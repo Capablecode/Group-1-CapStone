@@ -10,6 +10,7 @@ import backIcon from "../assets/back-icon.png";
 import dotIcon from "../assets/dot.png";
 import searchIcon from "../assets/search.png";
 import profilePics from "../assets/profile-pics.jpg";
+import DarkMode from "./DarkMode";
 const Header = () => {
   const [inputValue, setInputValue] = useState("");
 
@@ -54,6 +55,8 @@ const Header = () => {
           <img src={dotIcon} alt="tags icon" />
         </button>
       </div>
+
+      <DarkMode />
     </header>
   );
 };

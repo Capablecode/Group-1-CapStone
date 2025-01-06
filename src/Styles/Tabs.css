@@ -109,3 +109,8 @@ body {
     height: 0.8em; /* Smaller icons for mobile */
   }
 }
+.dark-mode{
+  .tab.active{
+    color: #fff;
+  }
+}

@@ -104,7 +104,7 @@
 @media (min-width: 601px) {
   .instagram-profile {
     grid-template-rows: auto auto auto;
-    grid-template-columns: 20% 1fr;
+    grid-template-columns: 30% 1fr;
   }
 
   .profile-picture {
@@ -115,7 +115,9 @@
     align-items: center;
     margin-right: 2rem;
   }
-
+  .profile-picture img {
+    width: 100%;
+  }
   .profile-bio {
     grid-column: 2/3;
   }
@@ -123,7 +125,6 @@
   .profile-actions {
     display: none;
   }
-
   .profile-container,
   .bio-heading,
   .bio-description span,
@@ -182,7 +183,7 @@
   .bio-category,
   .signed {
     color: #989898;
-    opacity: 0.7;
+    
   }
 
   .profile-container {
@@ -191,6 +192,12 @@
 
   .bio-link {
     text-decoration: none;
-    color: #0f4d73;
+    color: #44A1DB;
   }
+}
+.dark-mode{
+  .message-button {
+    color: #fff;
+  }
+ 
 }

@@ -1,0 +1,8 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+body.dark-mode{
+  background-color: #161722;
+  color:#fff;
+}
