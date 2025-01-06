@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <ProfilePage/>
+      <ProfilePage />
       <Highlight />
       <TabsComponent />
       <Footer />
