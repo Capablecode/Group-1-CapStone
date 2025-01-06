@@ -1,14 +1,21 @@
-import React from "react";
-import "../Styles/Tabs.css"; // Custom CSS for styling
-import { usePost } from "../hook/usePost"; // Custom hook for posts
-import { useReels } from "../hook/useReels"; // Custom hook for reels
-import { useMarks } from "../hook/useMarks"; // Custom hook for marks
-import publication from "../assets/post.png"; // Icon for publication tab
-import reel from "../assets/reels.png"; // Icon for reels tab
-import tag from "../assets/Tag.png"; // Icon for marks tab
+import { useRef, useState, useEffect } from "react";
+import "../Styles/Tabs.css";
+import { usePost } from "../hook/usePost";
+import { useReels } from "../hook/useReels";
+import { useMarks } from "../hook/useMarks";
+import publication from "../assets/post.png";
+import reel from "../assets/reels.png";
+import tag from "../assets/Tag.png";
 
 function App() {
-  const [activeTab, setActiveTab] = React.useState("publication");
+  const [activeTab, setActiveTab] = useState("publication");
+  const [lineStyle, setLineStyle] = useState({ width: "0", left: "0" });
+  const tabRefs = {
+    publication: useRef(null),
+    reels: useRef(null),
+    marks: useRef(null),
+  };
+
   const { posts = [], isPostsLoading, postsError } = usePost();
   const { reels = [], isReelsLoading, reelsError } = useReels();
   const { marks = [], isMarksLoading, marksError } = useMarks();
@@ -23,24 +30,20 @@ function App() {
     return item.thumbnail_url || "";
   };
 
-  const getIndicatorPosition = () => {
-    switch (activeTab) {
-      case "publication":
-        return "0%";
-      case "reels":
-        return "33.33%";
-      case "marks":
-        return "66.66%";
-      default:
-        return "0%";
+  useEffect(() => {
+    const activeTabRef = tabRefs[activeTab].current;
+    if (activeTabRef) {
+      const { offsetWidth, offsetLeft } = activeTabRef;
+      setLineStyle({ width: `${offsetWidth}px`, left: `${offsetLeft}px` });
     }
-  };
+  }, [activeTab]);
 
   return (
     <div className="instagram-container">
       <div className="tabs-container">
         <div className="tabs">
           <div
+            ref={tabRefs.publication}
             className={`tab ${activeTab === "publication" ? "active" : ""}`}
             onClick={() => setActiveTab("publication")}
             role="tab"
@@ -50,6 +53,7 @@ function App() {
             PUBLICATION
           </div>
           <div
+            ref={tabRefs.reels}
             className={`tab ${activeTab === "reels" ? "active" : ""}`}
             onClick={() => setActiveTab("reels")}
             role="tab"
@@ -59,6 +63,7 @@ function App() {
             REELS
           </div>
           <div
+            ref={tabRefs.marks}
             className={`tab ${activeTab === "marks" ? "active" : ""}`}
             onClick={() => setActiveTab("marks")}
             role="tab"
@@ -68,7 +73,7 @@ function App() {
             MARKS
           </div>
         </div>
-        <div className="active-line" style={{ left: getIndicatorPosition() }} />
+        <div className="active-line" style={lineStyle} />
       </div>
 
       <div className="content">
@@ -97,10 +102,18 @@ function App() {
             ) : reelsError ? (
               <p>Error: {reelsError}</p>
             ) : (
-              <div className="image-grid">
+              <div className="video-grid">
                 {reels.map((item) => (
-                  <div key={item.id} className="image-item">
-                    <img src={getImageUrl(item)} alt={item.code} />
+                  <div key={item.id} className="video-item">
+                    <video
+                      src={item.video_url}
+                      controls
+                      preload="metadata"
+                      width="100%"
+                      height="auto"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
                 ))}
               </div>

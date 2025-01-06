@@ -20,11 +20,18 @@
   grid-row: 1/2;
   display: flex;
 }
-
 .profile-picture img {
   width: 80%;
   border-radius: 50%;
   object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-picture img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ddd;
+  padding: 1px;
 }
 
 .profile-details {
@@ -153,7 +160,7 @@
 
   .message-button {
     font-size: 0.7rem;
-    width: 7rem;
+    width: 10rem;
   }
 
   .profile-container button {
@@ -193,6 +200,19 @@
   .bio-link {
     text-decoration: none;
     color: #44A1DB;
+  }
+  .profile-picture img {
+    width: 100%;
+    border-radius: 50%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .profile-picture img:hover {
+    transform: scale(1.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #ddd;
+    padding: 1px;
   }
 }
 .dark-mode{

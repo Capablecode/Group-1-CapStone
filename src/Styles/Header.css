@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  width: 90%;
+  width: 64%;
   margin: 0 auto;
   max-width: 976px;
 }
@@ -60,6 +60,11 @@ input::placeholder {
 nav .icons {
   margin: 0 10px;
   font-size: 18px;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav .icons:hover {
+  transform: scale(1.1);
 }
 .profile-pics {
   width: 24px;
@@ -70,12 +75,11 @@ nav .icons {
 .mobile-header {
   display: none;
 }
-.dark-mode{
-  .header{
+.dark-mode {
+  .header {
     border: none;
     background-color: #000;
   }
-  
 }
 
 /* Mobile Styles */
@@ -107,12 +111,10 @@ nav .icons {
     margin-left: 3rem;
     font-size: 16px;
   }
-  .dark-mode{
-    .header{
+  .dark-mode {
+    .header {
       border: none;
       background-color: #161722;
     }
-    
   }
 }
-
