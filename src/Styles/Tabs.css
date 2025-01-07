@@ -53,6 +53,7 @@
   transition: left 0.3s ease-in-out;
 }
 
+
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -140,4 +141,14 @@ body {
   .tab.active {
     color: #fff;
   }
+  .active-line {
+    background-color: yellow
+  }
+}
+.icond {
+  filter: invert(0); /* Black */
+}
+
+.dark-mode .icond {
+  filter: invert(1); /* White */
 }

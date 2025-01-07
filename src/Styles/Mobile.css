@@ -159,9 +159,11 @@
   }
 
   .message-button {
-    font-size: 0.7rem;
-    width: 10rem;
+    font-size: 0.9rem;
+    width: 8.5rem;
+    
   }
+
 
   .profile-container button {
     padding: 0px 12px;
@@ -220,4 +222,11 @@
     color: #fff;
   }
  
+}
+.icond {
+  filter: invert(0); /* Black */
+}
+
+.dark-mode .icond {
+  filter: invert(1); /* White */
 }
