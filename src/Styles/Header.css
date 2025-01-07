@@ -17,8 +17,16 @@
   justify-content: space-between;
   padding: 10px 20px;
   width: 64%;
+  /* background:blue; */
   margin: 0 auto;
   max-width: 976px;
+}
+.icond {
+  filter: invert(0); /* Black */
+}
+
+.dark-mode .icond {
+  filter: invert(1); /* White */
 }
 
 .desktop-header h1 {
@@ -79,8 +87,14 @@ nav .icons:hover {
   .header {
     border: none;
     background-color: #000;
+
   }
+  .search-bar input{
+    background-color: #EFEFEF33;
+  }
+  
 }
+
 
 /* Mobile Styles */
 @media (max-width: 768px) {

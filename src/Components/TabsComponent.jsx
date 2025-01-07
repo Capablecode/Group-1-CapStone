@@ -3,9 +3,9 @@ import "../Styles/Tabs.css";
 import { usePost } from "../hook/usePost";
 import { useReels } from "../hook/useReels";
 import { useMarks } from "../hook/useMarks";
-import publication from "../assets/post.png";
-import reel from "../assets/reels.png";
-import tag from "../assets/Tag.png";
+import publication from "../assets/post.svg";
+import reel from "../assets/reels.svg";
+import tag from "../assets/Tag.svg";
 
 function App() {
   const [activeTab, setActiveTab] = useState("publication");
@@ -49,7 +49,7 @@ function App() {
             role="tab"
             aria-selected={activeTab === "publication"}
           >
-            <img src={publication} alt="publication" />
+            <img src={publication} alt="publication" className="icond" />
             PUBLICATION
           </div>
           <div
@@ -59,7 +59,7 @@ function App() {
             role="tab"
             aria-selected={activeTab === "reels"}
           >
-            <img src={reel} alt="reels" />
+            <img src={reel} alt="reels" className="icond" />
             REELS
           </div>
           <div
@@ -69,7 +69,7 @@ function App() {
             role="tab"
             aria-selected={activeTab === "marks"}
           >
-            <img src={tag} alt="marks" />
+            <img src={tag} alt="marks" className="icond"/>
             MARKS
           </div>
         </div>

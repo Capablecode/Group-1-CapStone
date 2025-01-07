@@ -1,10 +1,10 @@
 import "../Styles/Mobile.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import DropDown from "../assets/Vin.png";
-import User from "../assets/icon.png";
-import Dots from "../assets/dots.png";
-import AddIcon from "../assets/addicon.png";
+import DropDown from "../assets/Vin.svg";
+import User from "../assets/icon.svg";
+import Dots from "../assets/dots.svg";
+import AddIcon from "../assets/addicon.svg";
 
 const ProfilePage = () => {
   const [data, setData] = useState([]);
@@ -55,13 +55,13 @@ const ProfilePage = () => {
           <h1 className="profile-username">{data.full_name}</h1>
           <button className="message-button">send a message</button>
           <button className="user-button">
-            <img src={User} alt="user-id" />
+            <img src={User} alt="user-id" className="icond" />
           </button>
           <button className="DropDown-button">
-            <img src={DropDown} alt="down" />
+            <img src={DropDown} alt="down" className="icond" />
           </button>
           <div className="menu">
-            <img src={Dots} alt="menu" />
+            <img src={Dots} alt="menu" className="icond" />
           </div>
         </div>
         <div className="stats">
@@ -98,7 +98,7 @@ const ProfilePage = () => {
         <button className="action-button follow-button">Follow</button>
         <button className="action-button message-button">Message</button>
         <div className="action-button icon-button">
-          <img src={AddIcon} alt="" />
+          <img src={AddIcon} alt="" className="icond" />
         </div>
       </div>
     </div>
