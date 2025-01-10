@@ -17,8 +17,7 @@ const Highlight = () => {
         params: { highlight_id: "17907964880010937" },
         url_embed_safe: true, // Ensure this ID is correct
         headers: {
-          "X-RapidAPI-Key":
-            "ac7fda31efmsh14ce044bd25514fp14533ajsn9f5b3b7f7084",
+          "X-RapidAPI-Key": "ac7fda31efmsh14ce044bd25514fp14533ajsn9f5b3b7f7",
           "X-RapidAPI-Host": "instagram-scraper-api2.p.rapidapi.com",
         },
       };
