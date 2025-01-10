@@ -1,15 +1,15 @@
 import Header from "./Components/Header";
-// import Highlight from "./Components/Highlight.jsx";
-import TabsComponent from "./Components/TabsComponent.jsx";
+// import Highlight from "./Components/Highlight";
+import TabsComponent from "./Components/TabsComponent";
 import Footer from "./Components/Footer";
-// import ProfilePage from "./Components/ProfileMobile.jsx";
-import Stories from "./Components/stories.jsx";
+import ProfilePage from "./Components/ProfileMobile";
+import Stories from "./Components/Stories";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      {/* <ProfilePage /> */}
+      <ProfilePage />
       {/* <Highlight /> */}
       <Stories />
       <TabsComponent />

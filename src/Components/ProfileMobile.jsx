@@ -5,6 +5,7 @@ import DropDown from "../assets/Vin.svg";
 import User from "../assets/icon.svg";
 import Dots from "../assets/dots.svg";
 import AddIcon from "../assets/addicon.svg";
+import { API_KEY } from "../data";
 
 const ProfilePage = () => {
   const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ const ProfilePage = () => {
   const [error, setError] = useState(null);
 
   const url = "https://instagram-scraper-api2.p.rapidapi.com/v1/info";
-  const apiKey = "ac7fda31efmsh14ce044bd25514fp14533ajsn9f5b3b7f70";
+  const apiKey = API_KEY;
   useEffect(() => {
     const getData = async () => {
       try {
@@ -28,12 +29,12 @@ const ProfilePage = () => {
         });
         if (response?.data?.data) {
           setData(response.data.data);
-          console.log(response.data.data);
+          // console.log(setData);
         } else {
           setError(error);
         }
       } catch (error) {
-        console.log(error);
+        // console.log(error);
         setError(error.message || error.response.data || "error message");
       } finally {
         setLoading(false);

@@ -20,7 +20,9 @@
   text-align: center;
   flex-shrink: 0;
 }
-
+.dark-mode .story-caption{
+  color: white;
+}
 .story-circle {
   width: 80px;
   height: 80px;
