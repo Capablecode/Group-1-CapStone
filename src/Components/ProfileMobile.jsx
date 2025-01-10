@@ -12,8 +12,7 @@ const ProfilePage = () => {
   const [error, setError] = useState(null);
 
   const url = "https://instagram-scraper-api2.p.rapidapi.com/v1/info";
-  const apiKey = "ac7fda31efmsh14ce044bd25514fp14533ajsn9f5b3b7f7084";
-
+  const apiKey = "ac7fda31efmsh14ce044bd25514fp14533ajsn9f5b3b7f70";
   useEffect(() => {
     const getData = async () => {
       try {
@@ -31,7 +30,7 @@ const ProfilePage = () => {
           setData(response.data.data);
           console.log(response.data.data);
         } else {
-          setError("No data received");
+          setError(error);
         }
       } catch (error) {
         console.log(error);

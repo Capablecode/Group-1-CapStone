@@ -17,7 +17,7 @@ export function usePost() {
         },
         headers: {
           "x-rapidapi-key":
-            "ac7fda31efmsh14ce044bd25514fp14533ajsn9f5b3b7f7084",
+            "8efdbf9cf4msh259a96f1712fcfbp1bcac8jsne2ad06904974",
           "x-rapidapi-host": "instagram-scraper-api2.p.rapidapi.com",
         },
       };
