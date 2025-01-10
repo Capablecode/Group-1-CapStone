@@ -30,8 +30,7 @@ const Highlight = () => {
         params: options.params,
         headers: options.headers,
       });
-     
-     
+
       const result = response?.data?.data?.items;
 
       setStories(result || []);
@@ -81,7 +80,7 @@ const Highlight = () => {
               stories.map((story, index) => (
                 <div key={index} className="story">
                   <img
-                    src={story.user.profile_pic_url  || "default-thumbnail.jpg"}
+                    src={story.user.profile_pic_url || "default-thumbnail.jpg"}
                     alt={`Story ${index + 1}`}
                   />
                   <p>{story.caption || "No caption available"}</p>
