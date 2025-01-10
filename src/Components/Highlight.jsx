@@ -17,7 +17,8 @@ const Highlight = () => {
         url: "https://instagram-scraper-api2.p.rapidapi.com/v1/highlight_info",
         params: { highlight_id: "17907964880010937" },
         headers: {
-          "X-RapidAPI-Key": "a3e7b81b-aa7d-4ef8-8cd4-9938195a1f3e",
+          "X-RapidAPI-Key":
+            "ac7fda31efmsh14ce044bd25514fp14533ajsn9f5b3b7f7084",
           "X-RapidAPI-Host": "instagram-scraper-api2.p.rapidapi.com",
         },
       };
