@@ -14,7 +14,7 @@
 }
 
 .footer-button {
-  background: none;
+  background: transparent;
   border: none;
   outline: none;
   font-size: 20px;
@@ -25,7 +25,16 @@
 .footer-button:hover {
   color: #000;
 }
+.icond{
+  filter: invert(0); /* Black */
+}
 
+.dark-mode .icond{
+  filter: invert(1); /* White */
+}
+.dark-mode .footer{
+    background-color: #000; 
+}
 /* Responsive Design */
 @media (min-width: 768px) {
   .footer {

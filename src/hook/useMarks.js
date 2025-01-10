@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { API_KEY } from "../data";
 
 export function useMarks() {
   const [marks, setMarks] = useState([]);
@@ -16,7 +17,7 @@ export function useMarks() {
           url_embed_safe: true,
         },
         headers: {
-          "x-rapidapi-key": "8efdbf9cf4msh259a96f1712fcfbp1bcac8jsne2ad069049",
+          "x-rapidapi-key": API_KEY,
           "x-rapidapi-host": "instagram-scraper-api2.p.rapidapi.com",
         },
       };

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import "../Styles/Highlight.css";
+import { API_KEY } from "../data";
 
 const Highlight = () => {
   const [stories, setStories] = useState([]);
@@ -14,11 +15,13 @@ const Highlight = () => {
     setError(null); // Reset error state
     try {
       const options = {
-        url: "https://instagram-scraper-api2.p.rapidapi.com/v1/highlight_info",
-        params: { highlight_id: "17907964880010937" },
+        url: "https://instagram-scraper-api2.p.rapidapi.com/v1/highlights",
+        params: {
+          username_or_id_or_url: "mrbeast",
+          url_embed_safe: true,
+        },
         headers: {
-          "X-RapidAPI-Key":
-            "ac7fda31efmsh14ce044bd25514fp14533ajsn9f5b3b7f7084",
+          "X-RapidAPI-Key": API_KEY,
           "X-RapidAPI-Host": "instagram-scraper-api2.p.rapidapi.com",
         },
       };
@@ -27,16 +30,19 @@ const Highlight = () => {
         params: options.params,
         headers: options.headers,
       });
-      
-      const result = response.data.data.items
-      
-      
+     
+     
+      const result = response?.data?.data?.items;
+
       setStories(result || []);
-      console.log(setStories);
-      
+      console.log(result);
+
       setSelectedCategory(category);
     } catch (error) {
-      console.error("Error fetching data:", error.response?.data || error.message || "Unknown error");
+      console.error(
+        "Error fetching data:",
+        error.response?.data || error.message || "Unknown error"
+      );
       setError("Failed to fetch stories. Please try again later.");
     } finally {
       setLoading(false);
@@ -53,7 +59,9 @@ const Highlight = () => {
             className="circle-container"
             onClick={() => fetchStories(category)}
           >
-            <div className={`circle ${category.length % 2 === 0 ? "red" : "blue"}`}>
+            <div
+              className={`circle ${category.length % 2 === 0 ? "red" : "blue"}`}
+            >
               <div className="heart">❤</div>
             </div>
             <p className="circle-text">{category}</p>
@@ -73,7 +81,7 @@ const Highlight = () => {
               stories.map((story, index) => (
                 <div key={index} className="story">
                   <img
-                    src={story.media_url || "default-thumbnail.jpg"}
+                    src={story.user.profile_pic_url  || "default-thumbnail.jpg"}
                     alt={`Story ${index + 1}`}
                   />
                   <p>{story.caption || "No caption available"}</p>
