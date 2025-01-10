@@ -36,8 +36,7 @@ function App() {
       const { offsetWidth, offsetLeft } = activeTabRef;
       setLineStyle({ width: `${offsetWidth}px`, left: `${offsetLeft}px` });
     }
-  }, [activeTab]);
-
+  }, [activeTab]); // Add `activeTab` as a dependency
   return (
     <div className="instagram-container">
       <div className="tabs-container">
@@ -69,7 +68,7 @@ function App() {
             role="tab"
             aria-selected={activeTab === "marks"}
           >
-            <img src={tag} alt="marks" className="icond"/>
+            <img src={tag} alt="marks" className="icond" />
             MARKS
           </div>
         </div>

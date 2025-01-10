@@ -16,8 +16,7 @@ export function useReels() {
           url_embed_safe: true,
         },
         headers: {
-          "x-rapidapi-key":
-            "ac7fda31efmsh14ce044bd25514fp14533ajsn9f5b3b7f7084",
+          "x-rapidapi-key": "8efdbf9cf4msh259a96f1712fcfbp1bcac8jsne2ad0690",
           "x-rapidapi-host": "instagram-scraper-api2.p.rapidapi.com",
         },
       };
