@@ -24,7 +24,7 @@ export function usePost() {
 
       try {
         const response = await axios.request(options);
-        console.log(response.data.data.items);
+        // console.log(response.data.data.items);
         setPosts(response.data.data.items || []);
         setError(null);
         // let data = response.data.map((data) => console.log(response.data.data));

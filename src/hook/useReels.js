@@ -24,7 +24,7 @@ export function useReels() {
 
       try {
         const response = await axios.request(options);
-        console.log(response.data.data.items);
+        // console.log(response.data.data.items);
 
         // Filter only videos from the fetched data
         const videoReels = (response.data.data.items || []).filter(

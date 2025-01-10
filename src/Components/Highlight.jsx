@@ -5,37 +5,40 @@ import "../Styles/Highlight.css";
 const Highlight = () => {
   const [stories, setStories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [loading, setLoading] = useState(false); // Added loading state
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null); // Error state
   const categories = ["Templates", "Reviews", "Mentions", "Tips", "Blog"];
 
   const fetchStories = async (category) => {
-    setLoading(true); // Set loading to true when fetching starts
+    setLoading(true);
+    setError(null); // Reset error state
     try {
       const options = {
-        method: "GET",
         url: "https://instagram-scraper-api2.p.rapidapi.com/v1/highlight_info",
         params: { highlight_id: "17907964880010937" },
-        url_embed_safe: true, // Ensure this ID is correct
         headers: {
           "X-RapidAPI-Key": "a3e7b81b-aa7d-4ef8-8cd4-9938195a1f3e",
           "X-RapidAPI-Host": "instagram-scraper-api2.p.rapidapi.com",
         },
       };
 
-      console.log("Fetching stories for category:", category);
-      const response = await axios.request(options);
-      console.log("API response:", response.data);
-
-      // Update stories based on API response
-      setStories(response.data.items || []);
+      const response = await axios.get(options.url, {
+        params: options.params,
+        headers: options.headers,
+      });
+      
+      const result = response.data.data.items
+      
+      
+      setStories(result || []);
+      console.log(setStories);
+      
       setSelectedCategory(category);
     } catch (error) {
-      console.error(
-        "Error fetching data:",
-        error.response?.data || error.message || "Unknown error"
-      );
+      console.error("Error fetching data:", error.response?.data || error.message || "Unknown error");
+      setError("Failed to fetch stories. Please try again later.");
     } finally {
-      setLoading(false); // Stop loading when the request completes
+      setLoading(false);
     }
   };
 
@@ -45,13 +48,11 @@ const Highlight = () => {
       <div className="circular-container">
         {categories.map((category) => (
           <div
-            key={category} // Use category name as key
+            key={category}
             className="circle-container"
             onClick={() => fetchStories(category)}
           >
-            <div
-              className={`circle ${category.length % 2 === 0 ? "red" : "blue"}`}
-            >
+            <div className={`circle ${category.length % 2 === 0 ? "red" : "blue"}`}>
               <div className="heart">❤</div>
             </div>
             <p className="circle-text">{category}</p>
@@ -61,7 +62,8 @@ const Highlight = () => {
 
       {/* Stories Section */}
       <div className="stories">
-        {loading ? ( // Show loading spinner if fetching stories
+        {error && <p className="error">{error}</p>} {/* Display error if any */}
+        {loading ? (
           <p>Loading stories...</p>
         ) : selectedCategory ? (
           <>
@@ -70,7 +72,7 @@ const Highlight = () => {
               stories.map((story, index) => (
                 <div key={index} className="story">
                   <img
-                    src={story.media_url || "default-thumbnail.jpg"} // Use fallback thumbnail
+                    src={story.media_url || "default-thumbnail.jpg"}
                     alt={`Story ${index + 1}`}
                   />
                   <p>{story.caption || "No caption available"}</p>

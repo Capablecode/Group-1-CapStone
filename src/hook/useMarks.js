@@ -24,9 +24,9 @@ export function useMarks() {
 
       try {
         const response = await axios.request(options);
-        console.log(response.data.data.items);
+        // console.log(response.data.data.items);
 
-        console.log(response.data.data.items);
+        // console.log(response.data.data.items);
         setMarks(response.data.data.items || []);
         setMarksError(null);
       } catch (error) {
