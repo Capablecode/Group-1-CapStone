@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { API_KEY } from "../data";
 
 export function useReels() {
   const [reels, setReels] = useState([]);
@@ -16,15 +17,14 @@ export function useReels() {
           url_embed_safe: true,
         },
         headers: {
-          "x-rapidapi-key":
-            "8efdbf9cf4msh259a96f1712fcfbp1bcac8jsne2ad06904974",
+          "x-rapidapi-key": API_KEY,
           "x-rapidapi-host": "instagram-scraper-api2.p.rapidapi.com",
         },
       };
 
       try {
         const response = await axios.request(options);
-        console.log(response.data.data.items);
+        // console.log(response.data.data.items);
 
         // Filter only videos from the fetched data
         const videoReels = (response.data.data.items || []).filter(
