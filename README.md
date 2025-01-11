@@ -74,8 +74,4 @@ Feel free to fork this project and submit pull requests with improvements or bug
 - Alabi Sunday (019) - https://github.com/Capablecode
 - Raji Itunu (097) - https://github.com/itunumide
 - Emmanuel God'stime (043) - https://github.com/Nuelle-tech
-- Olufunmilayo Esther Busari
-
-<!-- ## License
-
-This project is open-source and available under the MIT License. -->
+- Olufunmilayo Esther Busari (032) - https://github.com/oluphunmmy
